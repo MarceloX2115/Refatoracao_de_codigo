@@ -1,18 +1,23 @@
-## Getting Started
+# Refatoração com DRY - Gerenciador de Vendas
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Melhorias Implementadas
 
-## Folder Structure
+1. **Nomenclatura Descritiva**:
+   - Classes e métodos renomeados para refletir melhor seu propósito (ex: `Produto` → `ItemEletronico`, `exibirPrecoFinal` → `mostrarValorComDesconto`).
 
-The workspace contains two folders by default, where:
+2. **Encapsulamento**:
+   - Atributos privados garantem que os dados do item não sejam modificados diretamente.
+   - Métodos públicos (`calcularValorFinal`, `mostrarValorComDesconto`) controlam o acesso à lógica.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+3. **Princípio DRY**:
+   - O cálculo do desconto está centralizado no método `calcularValorFinal()`, evitando repetição de código.
+   - A formatação de exibição é unificada em `mostrarValorComDesconto()`.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+4. **Legibilidade**:
+   - Comentários explicam a intenção (não o óbvio).
+   - Nomes de variáveis claros (ex: `descontoAplicavel` em vez de `desconto`).
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Como Executar
+1. Compile o arquivo Java:
+   ```bash
+   javac GerenciadorDeVendas.java
